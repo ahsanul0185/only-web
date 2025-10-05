@@ -39,7 +39,7 @@ const Modal = ({ showModal, setShowModal, children }) => {
             exit={{ opacity: 0, scale: 1, x : -50 }}
             transition={{ duration: 0.3 }} // smooth duration
             onClick={(e) => e.stopPropagation()}
-            className="bg-white text-dark dark:bg-primaryDark border border-gray-300/40 rounded p-5 relative max-w-md w-full"
+            className="bg-white text-dark dark:bg-primaryDark border border-gray-300/40 rounded-lg p-5 relative max-w-4xl w-full"
           >
             <button
               className="absolute top-3 right-3 text-2xl cursor-pointer text-dark"

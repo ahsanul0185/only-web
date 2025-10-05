@@ -29,8 +29,21 @@ const ProfileCard = () => {
       <Modal
         showModal={activeModal === "show-profile"}
         setShowModal={setActiveModal}
+        className="w-[800px]"
       >
-       Hello I am Modal
+       <div className="flex gap-12 py-8 flex-col md:flex-row">
+        <img src={avatarImg} className="w-[40%] mx-auto md:w-[30%] rounded-lg" alt="" />
+        <div>
+            <h2 className="text-2xl">Rayan</h2>
+        <p className="text-sm">WebMaster</p>
+
+        <p className="py-8">Passionate about web design, I create unique websites and visual identities to help businesses stand out. My goal: to combine aesthetics and performance to offer tailor-made solutions that reflect your vision.🚀</p>
+
+        <p><span>Phone: </span> +33 00 00 00 00</p>
+        <p><span>Email: </span> onlywebco.com@gmail.com</p>
+
+        </div>
+       </div>
       </Modal>
     </div>
   );
