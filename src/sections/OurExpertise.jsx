@@ -57,7 +57,7 @@ const OurExpertise = () => {
     }, []);
     
     return (
-        <div ref={sectionRef} className='h-screen section-y-padding'>
+        <div ref={sectionRef} className='min-h-screen section-y-padding'>
             <SectionTitle>How We Empower You?</SectionTitle>
             <div className='mt-12 default-padding flex justify-between gap-8 flex-wrap'>
                 {cards.map((card, idx) => (
@@ -79,7 +79,7 @@ const ExpertiseCard = React.forwardRef(({card}, ref) => {
     return (
         <div 
             ref={ref}
-            className='h-[500px] md:flex-[30%] bg-dark border border-gray-200/40 rounded-lg p-6 flex flex-col gap-4'
+            className='h-[500px] w-full md:flex-[30%] bg-dark border border-gray-200/40 rounded-lg p-6 flex flex-col gap-4'
         >
             <img src={card.image} className='w-full h-[60%] border border-gray-200/40 rounded-lg object-cover' alt={card.title} />
             <div className='flex flex-col gap-4'>

@@ -4,6 +4,7 @@ import InteractiveTicker from '../components/InterectiveLoop'
 // import Marquee from "react-fast-marquee";
 import Marquee from '../components/Marquee';
 import OurExpertise from '../sections/OurExpertise';
+import OurWork from '../sections/OurWork';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <InteractiveTicker />
       <OurExpertise />
+      <OurWork />
     </div>
   )
 }
