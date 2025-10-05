@@ -24,7 +24,7 @@ const ProfileCard = () => {
         </p>
       </div>
 
-      <SocialLinks className="bg-black rounded-lg" />
+      <SocialLinks className="bg-black rounded-lg flex justify-center" />
 
       <Modal
         showModal={activeModal === "show-profile"}

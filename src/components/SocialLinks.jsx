@@ -1,6 +1,7 @@
 import React from "react";
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaFacebookF, FaTiktok, FaYoutube } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
+import Button from "./Button";
 
 const SocialLinks = ({className, iconClass}) => {
   const socialData = [
@@ -14,17 +15,19 @@ const SocialLinks = ({className, iconClass}) => {
 
   return (
     <div className={twMerge(`py-4`, className)}>
-      <div className="max-w-3xl mx-auto flex justify-center gap-4">
+      <div className="max-w-3xl mx-auto flex gap-4">
         {socialData.map((item, idx) => (
-          <a
+          <Button  className={twMerge(`text-white text-2xl transition-colors p-2 rounded-lg border-gray-200/40`, iconClass)}>
+            <a
             key={idx}
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={twMerge(`text-white text-2xl transition-colors p-2 rounded-lg`, iconClass)}
+            // className={twMerge(`text-white text-2xl transition-colors p-2 rounded-lg`, iconClass)}
           >
             {item.icon}
           </a>
+          </Button>
         ))}
       </div>
     </div>
