@@ -38,7 +38,7 @@ const Footer = () => {
 
 <div className="mt-12 text-center">
   
-      <Link className="text-center">LEGAL NOTICES</Link>
+      <Link to="/privacy-policy" className="text-center">LEGAL NOTICES</Link>
 </div>
     </footer>
   );

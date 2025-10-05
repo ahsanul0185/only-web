@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "/logo.jpg";
 import ContactButton from "./ContactButton";
+import { useNavigate } from "react-router-dom";
 
 const menuItems = [
   {
@@ -24,11 +25,13 @@ const menuItems = [
 
 const Navbar = () => {
 
+  const navigate = useNavigate();
+
   return (
     <div className="py-5 border-b border-b-gray-200/40 fixed w-full top-0 left-0 bg-black/75 z-50 backdrop-blur-md">
       <div className="default-padding flex items-center justify-between gap-8">
         <div>
-          <img src={logo} className="w-24" alt="" />
+          <img onClick={() => navigate("/")} src={logo} className="w-24 cursor-pointer" alt="" />
         </div>
 
         <div className="flex gap-14">
