@@ -12,7 +12,7 @@ const Footer = () => {
           <p>Digital Products & Services</p>
           <div className="flex flex-col gap-1 mt-4">
             <p>Contact: 07 49 70 10 03</p>
-            <p>Email: <a href="mailto:contact@webleague.fr" className="text-blue-400 hover:underline">contact@webleague.fr</a></p>
+            <p>Email: <a href="mailto:contact@webleague.fr" className="text-blue-400 hover:underline">onlywebco.com@gmail.com</a></p>
           </div>
         </div>
 

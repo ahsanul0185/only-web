@@ -7,10 +7,7 @@ const SocialLinks = ({className, iconClass}) => {
   const socialData = [
     { icon: <FaWhatsapp />, link: "https://wa.me/your-number" },
     { icon: <FaInstagram />, link: "https://instagram.com/your-profile" },
-    { icon: <FaLinkedin />, link: "https://linkedin.com/in/your-profile" },
-    { icon: <FaFacebookF />, link: "https://facebook.com/your-profile" },
     { icon: <FaTiktok />, link: "https://tiktok.com/@your-profile" },
-    { icon: <FaYoutube />, link: "https://youtube.com/@your-channel" },
   ];
 
   return (

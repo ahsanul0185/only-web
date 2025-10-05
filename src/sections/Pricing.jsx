@@ -2,13 +2,13 @@ import { motion } from "motion/react";
 import SectionTitle from "../components/SectionTitle";
 import { CircleCheck } from "lucide-react";
 import Button from "../components/Button";
-
 export const pricingCards = [
   {
-    title: "Visual Identity",
-    price: "200€",
+    title: "Logo and Visual Identity",
+    price: "80€",
     deliveredIn: "DELIVERED IN 1 WEEK",
-    description: "Craft a unique look that defines your brand.",
+    description:
+      "Create a unique brand identity with a professional logo and cohesive visual design system.",
     features: [
       "Logo & variations",
       "Graphic charter",
@@ -18,27 +18,34 @@ export const pricingCards = [
     ],
   },
   {
-    title: "Website",
-    price: "400€",
-    deliveredIn: "DELIVERED IN 3 WEEKS",
-    description: "Launch a responsive, high-performing website.",
+    title: "E-commerce Website",
+    price: "600€",
+    deliveredIn: "DELIVERED IN 4 WEEKS",
+    description:
+      "Complete online store with product management, cart, and secure payments.",
     best: true,
     features: [
       "E-commerce or showcase",
       "Dynamic site",
-      "Responsive (mobile version)",
-      "SEO reference",
-      "First-time training",
+      "Responsive design",
+      "SEO ready",
+      "Training included",
     ],
   },
   {
-    title: "Identity & Site",
-    price: "550€",
-    deliveredIn: "DELIVERED IN 4 WEEKS",
-    description: "Get your full identity and website in one pack.",
-    features: ["Visual identity offer", "Website offer", "Save money!"],
+    title: "Showcase Website",
+    price: "400€",
+    deliveredIn: "DELIVERED IN 3 WEEKS",
+    description:
+      "Perfect for businesses looking to establish an online presence.",
+    features: [
+      "Visual identity",
+      "Modern website",
+      "Cost-effective",
+    ],
   },
 ];
+
 
 const containerVariants = {
   hidden: {},

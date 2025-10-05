@@ -1,5 +1,5 @@
 import { useState } from "react";
-import avatarImg from "../assets/avatar.jpeg";
+import logo from "/logo.jpg";
 import Modal from "./Modal";
 import SocialLinks from "./SocialLinks";
 
@@ -11,17 +11,17 @@ const ProfileCard = () => {
       <div className="text-center py-8">
         <div onClick={() => setActiveModal("show-profile")}>
           <img
-            src={avatarImg}
-            className="w-[50%] rounded-full aspect-square mx-auto"
+            src={logo}
+            className="w-[50%] mx-auto"
             alt="Only Web"
           />
-          <h2 className="text-2xl mt-6">Rayan</h2>
-          <p className="text-sm">WebMaster</p>
+          <h2 className="text-2xl mt-6">Only Web</h2>
+          <p className="text-sm">Website and Design Creation</p>
         </div>
-        <p className="w-[70%] mx-auto mt-6">
+        {/* <p className="w-[70%] mx-auto mt-6">
           Freelance website designer & graphic designer – I support businesses
           with their identity and online presence
-        </p>
+        </p> */}
       </div>
 
       <SocialLinks className="bg-black rounded-lg flex justify-center" />
@@ -31,21 +31,18 @@ const ProfileCard = () => {
         setShowModal={setActiveModal}
         className="w-[800px]"
       >
-        <div className="flex gap-12 py-8 flex-col md:flex-row">
+        <div className="flex gap-12 py-8 flex-col md:flex-row items-start">
           <img
-            src={avatarImg}
+            src={logo}
             className="w-[40%] mx-auto md:w-[30%] rounded-lg"
             alt=""
           />
           <div>
-            <h2 className="text-2xl">Rayan</h2>
-            <p className="text-sm">WebMaster</p>
+            <h2 className="text-2xl">Only Web</h2>
+            <p className="text-sm">Website and Design Creation</p>
 
             <p className="py-8">
-              Passionate about web design, I create unique websites and visual
-              identities to help businesses stand out. My goal: to combine
-              aesthetics and performance to offer tailor-made solutions that
-              reflect your vision.🚀
+              We craft unique websites and visual identities that help businesses shine online. Our mission is to blend creativity and performance to deliver custom solutions that truly reflect your brand. 
             </p>
 
             <p>

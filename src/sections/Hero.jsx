@@ -7,8 +7,8 @@ const Hero = () => {
     <div id="home" className="h-screen relative grid place-items-center">
       <div className="w-fit mx-auto text-center">
         <SplitText
-          text="YOUR VISION,"
-          className="uppercase text-7xl font-bold"
+          text="Your Vision,"
+          className="text-7xl font-bold"
           delay={70}
           duration={0.5}
           ease="power3.out"
@@ -22,8 +22,8 @@ const Hero = () => {
         <br />
 
         <SplitText
-          text="OUR MISSION"
-          className="uppercase text-7xl font-bold"
+          text="Our Mission"
+          className="text-7xl font-bold"
           delay={50}
           duration={0.5}
           ease="power3.out"

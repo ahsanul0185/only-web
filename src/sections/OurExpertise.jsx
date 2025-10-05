@@ -103,17 +103,17 @@ import boostGif from "../assets/boost.gif";
 export const cards = [
   {
     title: "Show who you are",
-    desc: "Make a difference with a style that reflects you and that won't be forgotten.",
+    desc: "Assert your identity with a unique style that leaves a lasting impression.",
     image: talentGif,
   },
   {
     title: "Make your target vibrate",
-    desc: "Attract attention, create connection with strong branding!",
+    desc: "Capture attention and build a strong connection through strategic and impactful design.",
     image: targetGif,
   },
   {
-    title: "Boost your success",
-    desc: "A clear, well-thought-out identity that transforms your ideas into results.",
+    title: "Grow your success",
+    desc: "Turn your ideas into real results with a clear and consistent brand image.",
     image: boostGif,
   },
 ];

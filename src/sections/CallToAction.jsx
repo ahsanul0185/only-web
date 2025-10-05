@@ -21,7 +21,7 @@ const CallToAction = () => {
 
         <SplitText
           text="→ LET'S TALK"
-          className="uppercase text-7xl font-bold text-primary cursor-pointer hover:translate-x-3 duration-300"
+          className="uppercase text-7xl font-bold cursor-pointer hover:translate-x-3 duration-300"
           delay={50}
           duration={0.5}
           ease="power3.out"
