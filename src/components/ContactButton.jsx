@@ -23,7 +23,7 @@ import { motion } from "motion/react";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const Button = ({ onClick, className, children }) => {
+const ContactButton = ({ onClick, className, children }) => {
   return (
     <button className="group relative border border-gray px-8 py-2 rounded-sm cursor-pointer overflow-hidden">
         <span className="group-hover:-translate-x-6 duration-300 block">Contact</span>
@@ -32,4 +32,4 @@ const Button = ({ onClick, className, children }) => {
   );
 };
 
-export default Button;
+export default ContactButton;
