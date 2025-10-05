@@ -5,19 +5,19 @@ import ContactButton from "./ContactButton";
 const menuItems = [
   {
     name : "Home",
-    hash : "#"
+    hash : "#home"
   },
   {
     name : "Our Work",
-    hash : "#"
+    hash : "#work"
   },
   {
     name : "Price",
-    hash : "#"
+    hash : "#price"
   },
   {
     name : "About",
-    hash : "#"
+    hash : "#about"
   }
 ]
 
@@ -46,8 +46,16 @@ const Navbar = () => {
 export default Navbar;
 
 const LinkButton = ({hash="#", children}) => {
+
+    const handleClick = () => {
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <button className="group cursor-pointer relative py-1 text-white rounded-lg shadow-md transition-all hover:shadow-lg">
+    <button onClick={handleClick} className="group cursor-pointer relative py-1 text-white rounded-lg shadow-md transition-all hover:shadow-lg">
       {children}
       <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white transition-transform duration-300 ease-out scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left"></span>
     </button>

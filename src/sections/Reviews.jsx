@@ -14,7 +14,7 @@ import { IoStar } from "react-icons/io5";
 
 const Reviews = () => {
   return (
-    <div className="section-y-padding">
+    <div id="reviews" className="section-y-padding">
       <SectionTitle>Reviews</SectionTitle>
        <div className="default-padding">
          <Testimonials />

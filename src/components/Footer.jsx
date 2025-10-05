@@ -36,7 +36,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <Link className="text-center block mt-12">LEGAL NOTICES</Link>
+<div className="mt-12 text-center">
+  
+      <Link className="text-center">LEGAL NOTICES</Link>
+</div>
     </footer>
   );
 };

@@ -55,7 +55,7 @@ const FAQs = () => {
   };
 
   return (
-    <div className="section-y-padding">
+    <div id="about" className="section-y-padding">
       <div className="default-padding flex gap-8 flex-col md:flex-row justify-between">
 
        

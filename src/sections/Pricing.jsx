@@ -68,7 +68,7 @@ const cardVariants = {
 
 const Pricing = () => {
   return (
-    <div className="section-y-padding">
+    <div id="price" className="section-y-padding">
       <SectionTitle>Pricing</SectionTitle>
 
       <div className="default-padding">

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 const OurWork = () => {
   return (
-    <div className="section-y-padding">
+    <div id="work" className="section-y-padding">
       <SectionTitle>Our Works</SectionTitle>
 
       <motion.div

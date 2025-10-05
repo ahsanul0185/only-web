@@ -5,7 +5,7 @@ import perso from "../assets/perso-only-web.png"
 
 const Hero = () => {
   return (
-    <div className="h-screen relative">
+    <div id="home" className="h-screen relative">
       <div className="w-fit mx-auto pt-44 text-center">
         <SplitText
           text="LAUNCH YOUR"

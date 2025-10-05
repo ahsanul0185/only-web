@@ -146,7 +146,7 @@ const cardVariants = {
 
 const OurExpertise = () => {
     return (
-        <div className='section-y-padding'>
+        <div id='expertise' className='section-y-padding'>
             <SectionTitle>How We Empower You?</SectionTitle>
             <motion.div 
                 variants={containerVariants}
