@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+
 import SplitText from "../components/SplitText";
 import { motion } from "motion/react";
-import perso from "../assets/perso-only-web.png"
 
 const Hero = () => {
   return (
-    <div id="home" className="h-screen relative">
-      <div className="w-fit mx-auto pt-44 text-center">
+    <div id="home" className="h-screen relative grid place-items-center">
+      <div className="w-fit mx-auto text-center">
         <SplitText
-          text="LAUNCH YOUR"
+          text="YOUR VISION,"
           className="uppercase text-7xl font-bold"
           delay={70}
           duration={0.5}
@@ -23,7 +22,7 @@ const Hero = () => {
         <br />
 
         <SplitText
-          text="DIGITAL PROJECT"
+          text="OUR MISSION"
           className="uppercase text-7xl font-bold"
           delay={50}
           duration={0.5}
@@ -47,14 +46,12 @@ const Hero = () => {
             ease: "ease",
             delay : 0.6
           }}
-          className="mt-7"
+          className="mt-7 text-lg"
         >
-          I create websites, graphic designs, and manage your community
-          management to help you build irresistible brands.
+          From concept to creation, we turn your brand into an online success story.
         </motion.p>
       </div>
 
-      <img src={perso} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-56" alt="" />
     </div>
   );
 };

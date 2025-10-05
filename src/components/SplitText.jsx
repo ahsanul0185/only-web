@@ -21,7 +21,8 @@ const SplitText = ({
   rootMargin = '-100px',
   textAlign = 'center',
   tag = 'p',
-  onLetterAnimationComplete
+  onLetterAnimationComplete,
+  onClick
 }) => {
   const ref = useRef(null);
   const animationCompletedRef = useRef(false);
@@ -150,43 +151,43 @@ const SplitText = ({
     switch (tag) {
       case 'h1':
         return (
-          <h1 ref={ref} style={style} className={classes}>
+          <h1 ref={ref} style={style} className={classes} onClick={onClick}>
             {text}
           </h1>
         );
       case 'h2':
         return (
-          <h2 ref={ref} style={style} className={classes}>
+          <h2 ref={ref} style={style} className={classes} onClick={onClick}>
             {text}
           </h2>
         );
       case 'h3':
         return (
-          <h3 ref={ref} style={style} className={classes}>
+          <h3 ref={ref} style={style} className={classes} onClick={onClick}>
             {text}
           </h3>
         );
       case 'h4':
         return (
-          <h4 ref={ref} style={style} className={classes}>
+          <h4 ref={ref} style={style} className={classes} onClick={onClick}>
             {text}
           </h4>
         );
       case 'h5':
         return (
-          <h5 ref={ref} style={style} className={classes}>
+          <h5 ref={ref} style={style} className={classes} onClick={onClick}>
             {text}
           </h5>
         );
       case 'h6':
         return (
-          <h6 ref={ref} style={style} className={classes}>
+          <h6 ref={ref} style={style} className={classes} onClick={onClick}>
             {text}
           </h6>
         );
       default:
         return (
-          <p ref={ref} style={style} className={classes}>
+          <p ref={ref} style={style} className={classes} onClick={onClick}>
             {text}
           </p>
         );

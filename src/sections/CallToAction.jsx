@@ -32,6 +32,7 @@ const CallToAction = () => {
           rootMargin="-100px"
           textAlign="center"
           animationDelay={0.3}
+          onClick={() => alert("clicked")}
         />
       </div>
     </div>
