@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import ProfileCard from "./ProfileCard";
+
 // Your FAQ data
 export const faqs = {
   general: [
@@ -54,11 +56,11 @@ const FAQs = () => {
 
   return (
     <div className="section-y-padding">
-      <div className="default-padding flex gap-8 flex-col md:flex-row">
+      <div className="default-padding flex gap-8 flex-col md:flex-row justify-between">
 
        
      
-          <div className="md:w-1/2">
+          <div className="md:w-[60%]">
 
             <FAQSection
             faqs={faqs.general}
@@ -67,10 +69,12 @@ const FAQs = () => {
             onToggle={toggleActiveIndex}
           />
           </div>
+
+          <div className=" w-[35%] ">
+            <ProfileCard />
+          </div>
   
-        <div>
-            Right Sections
-        </div>
+        
       </div>
     </div>
   );
@@ -129,7 +133,7 @@ const FAQSection = ({ faqs, categoryKey, activeIndex, onToggle }) => {
       className="space-y-4"
     >
       
-      <div className="space-y-3">
+      <div className="space-y-6">
         {faqs.map((faq, index) => (
           <FAQItem
             key={index}
