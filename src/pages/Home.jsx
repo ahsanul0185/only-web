@@ -7,6 +7,7 @@ import OurExpertise from '../sections/OurExpertise';
 import OurWork from '../sections/OurWork';
 import Pricing from '../sections/Pricing';
 import FAQs from '../components/FAQ';
+import Reviews from '../sections/Reviews';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <OurWork />
       <Pricing />
       <FAQs />
+      <Reviews/>
     </div>
   )
 }
