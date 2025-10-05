@@ -3,111 +3,148 @@ import { useRef, useEffect, useState } from 'react';
 
 const InteractiveLoop = ({
   images = [],
-  speed = 1,
+  speed = 6,
   direction = 'left',
   interactive = true,
   gap = 40,
-  imageWidth = 300,
-  imageHeight = 200,
+  imageWidth = '100px',
+  imageHeight = 'auto',
+  autoFill = true,
   className = ''
 }) => {
   const containerRef = useRef(null);
-  const wrapperRef = useRef(null);
-  const animationFrameRef = useRef(null);
+  const track1Ref = useRef(null);
+  const track2Ref = useRef(null);
+  const animationRef = useRef(null);
   const isDraggingRef = useRef(false);
-  const currentXRef = useRef(0);
+  const lastXRef = useRef(0);
   const velocityRef = useRef(0);
   const directionRef = useRef(direction);
-  const positionRef = useRef(0);
-  
-  const [isReady, setIsReady] = useState(false);
+  const xRef = useRef(0);
+  const [containerHeight, setContainerHeight] = useState(0);
+  const [multiplier, setMultiplier] = useState(1);
 
-  // Animation loop
   useEffect(() => {
-    if (!wrapperRef.current || images.length === 0) return;
+    if (!track1Ref.current || !containerRef.current || images.length === 0) return;
 
-    const wrapper = wrapperRef.current;
-    const itemWidth = imageWidth + gap;
-    const singleSetWidth = itemWidth * images.length;
+    const track1 = track1Ref.current;
+    const container = containerRef.current;
+    
+    // Wait for images to load
+    const loadImages = async () => {
+      const imageElements = track1.querySelectorAll('img');
+      await Promise.all(
+        Array.from(imageElements).map(img => {
+          if (img.complete) return Promise.resolve();
+          return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve;
+          });
+        })
+      );
 
-    setIsReady(true);
+      const trackWidth = track1.scrollWidth;
+      const trackHeight = track1.offsetHeight;
+      const containerWidth = container.offsetWidth;
+      
+      setContainerHeight(trackHeight);
 
-    const animate = () => {
-      if (!isDraggingRef.current) {
-        const moveAmount = directionRef.current === 'left' ? -speed : speed;
-        positionRef.current += moveAmount;
+      // Calculate how many times we need to repeat to fill the viewport
+      if (autoFill && trackWidth < containerWidth) {
+        const needed = Math.ceil(containerWidth / trackWidth) + 2;
+        setMultiplier(needed);
+      } else {
+        setMultiplier(1);
+      }
+    };
 
-        // Seamless wrapping
-        if (positionRef.current <= -singleSetWidth) {
-          positionRef.current = 0;
-        } else if (positionRef.current >= 0) {
-          positionRef.current = -singleSetWidth;
+    loadImages();
+  }, [images, autoFill]);
+
+  useEffect(() => {
+    if (!track1Ref.current || !track2Ref.current || images.length === 0 || multiplier === 0) return;
+
+    const track1 = track1Ref.current;
+    const track2 = track2Ref.current;
+    
+    setTimeout(() => {
+      const trackWidth = track1.scrollWidth;
+      
+      // Position second track right after first (including the gap)
+      track2.style.left = `${trackWidth + gap}px`;
+
+      const animate = () => {
+        if (!isDraggingRef.current) {
+          const moveAmount = directionRef.current === 'left' ? -speed : speed;
+          xRef.current += moveAmount;
+
+          // Seamless loop logic
+          const loopWidth = trackWidth + gap;
+          
+          if (directionRef.current === 'left') {
+            if (xRef.current <= -loopWidth) {
+              xRef.current = 0;
+            }
+          } else {
+            if (xRef.current >= 0) {
+              xRef.current = -loopWidth;
+            }
+          }
+
+          track1.style.transform = `translateX(${xRef.current}px)`;
+          track2.style.transform = `translateX(${xRef.current}px)`;
         }
 
-        wrapper.style.transform = `translateX(${positionRef.current}px)`;
-      }
+        animationRef.current = requestAnimationFrame(animate);
+      };
 
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-
-    // Initialize position for left direction
-    if (directionRef.current === 'left') {
-      positionRef.current = 0;
-    } else {
-      positionRef.current = -singleSetWidth;
-    }
-
-    animate();
+      // Initialize
+      xRef.current = directionRef.current === 'left' ? 0 : -(trackWidth + gap);
+      animate();
+    }, 50);
 
     return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [images, speed, imageWidth, gap]);
+  }, [images, speed, multiplier]);
 
-  // Handle pointer down
   const handlePointerDown = (e) => {
     if (!interactive) return;
-    
     isDraggingRef.current = true;
-    currentXRef.current = e.clientX;
+    lastXRef.current = e.clientX;
     velocityRef.current = 0;
-    
     e.currentTarget.setPointerCapture(e.pointerId);
   };
 
-  // Handle pointer move
   const handlePointerMove = (e) => {
-    if (!interactive || !isDraggingRef.current || !wrapperRef.current) return;
+    if (!interactive || !isDraggingRef.current || !track1Ref.current) return;
 
-    const deltaX = e.clientX - currentXRef.current;
+    const deltaX = e.clientX - lastXRef.current;
     velocityRef.current = deltaX;
-    
-    positionRef.current += deltaX;
-    
-    const itemWidth = imageWidth + gap;
-    const singleSetWidth = itemWidth * images.length;
-    
-    // Seamless wrapping during drag
-    if (positionRef.current <= -singleSetWidth) {
-      positionRef.current = 0;
-    } else if (positionRef.current >= 0) {
-      positionRef.current = -singleSetWidth;
+    xRef.current += deltaX;
+
+    const trackWidth = track1Ref.current.scrollWidth;
+    const loopWidth = trackWidth + gap;
+
+    // Wrap seamlessly during drag
+    if (xRef.current <= -loopWidth) {
+      xRef.current = 0;
+    } else if (xRef.current >= 0) {
+      xRef.current = -loopWidth;
     }
-    
-    wrapperRef.current.style.transform = `translateX(${positionRef.current}px)`;
-    
-    currentXRef.current = e.clientX;
+
+    track1Ref.current.style.transform = `translateX(${xRef.current}px)`;
+    track2Ref.current.style.transform = `translateX(${xRef.current}px)`;
+
+    lastXRef.current = e.clientX;
   };
 
-  // Handle pointer up
   const handlePointerUp = () => {
     if (!interactive || !isDraggingRef.current) return;
-    
     isDraggingRef.current = false;
     
-    // Determine direction based on velocity
     if (Math.abs(velocityRef.current) > 2) {
       directionRef.current = velocityRef.current > 0 ? 'right' : 'left';
     }
@@ -115,45 +152,81 @@ const InteractiveLoop = ({
 
   const cursorStyle = interactive ? (isDraggingRef.current ? 'grabbing' : 'grab') : 'default';
 
-  // Create duplicated images for seamless loop (2 sets is enough)
-  const duplicatedImages = [...images, ...images];
+  // Repeat images based on multiplier for autoFill
+  const repeatedImages = autoFill && multiplier > 1 
+    ? Array(multiplier).fill(images).flat() 
+    : images;
 
   return (
     <div 
       ref={containerRef}
-      className={`overflow-hidden w-full ${className}`}
-      style={{ cursor: cursorStyle }}
+      className={`overflow-hidden w-full relative ${className}`}
+      style={{ 
+        cursor: cursorStyle,
+        height: containerHeight || 'auto',
+        minHeight: '50px'
+      }}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       onPointerLeave={handlePointerUp}
     >
-      <div 
-        ref={wrapperRef}
-        className="flex items-center"
-        style={{ 
-          display: 'flex',
-          gap: `${gap}px`,
-          willChange: 'transform'
-        }}
-      >
-        {duplicatedImages.map((image, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 select-none"
-            style={{
-              width: `${imageWidth}`,
-              height: `${imageHeight}`
-            }}
-          >
-            <img
-              src={image.src}
-              alt={image.alt || `Image ${index + 1}`}
-              className="w-full h-full object-cover"
-              draggable="false"
-            />
-          </div>
-        ))}
+      <div className="relative w-full h-full">
+        {/* Track 1 */}
+        <div 
+          ref={track1Ref}
+          className="flex items-center absolute top-0 left-0 whitespace-nowrap"
+          style={{ 
+            gap: `${gap}px`,
+            willChange: 'transform'
+          }}
+        >
+          {repeatedImages.map((image, index) => (
+            <div
+              key={`t1-${index}`}
+              className="flex-shrink-0 select-none inline-block"
+              style={{
+                width: imageWidth,
+                height: imageHeight
+              }}
+            >
+              <img
+                src={image.src}
+                alt={image.alt || `Image ${index + 1}`}
+                className="w-full h-full object-cover"
+                draggable="false"
+              />
+            </div>
+          ))}
+        </div>
+        
+        {/* Track 2 - Duplicate */}
+        <div 
+          ref={track2Ref}
+          className="flex items-center absolute top-0 whitespace-nowrap"
+          style={{ 
+            gap: `${gap}px`,
+            willChange: 'transform'
+          }}
+        >
+          {repeatedImages.map((image, index) => (
+            <div
+              key={`t2-${index}`}
+              className="flex-shrink-0 select-none inline-block"
+              style={{
+                width: imageWidth,
+                height: imageHeight
+              }}
+            >
+              <img
+                src={image.src}
+                alt={image.alt || `Image ${index + 1}`}
+                className="w-full h-full object-cover"
+                draggable="false"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -164,12 +237,12 @@ const InteractiveLoop = ({
 
 export default function InteractiveTicker() {
   const demoImages = [
-    { src: '../../public/logo.jpg', alt: 'Abstract 1' },
-    { src: '../../public/logo.jpg', alt: 'Abstract 2' },
-    { src: '../../public/logo.jpg', alt: 'Abstract 3' },
-    { src: '../../public/logo.jpg', alt: 'Abstract 4' },
-    { src: '../../public/logo.jpg', alt: 'Abstract 5' },
-    { src: '../../public/logo.jpg', alt: 'Abstract 6' }
+    { src: '/logo.jpg', alt: 'Abstract 1' },
+    { src: '/logo.jpg', alt: 'Abstract 2' },
+    { src: '/logo.jpg', alt: 'Abstract 3' },
+    { src: '/logo.jpg', alt: 'Abstract 4' },
+    { src: '/logo.jpg', alt: 'Abstract 5' },
+    { src: '/logo.jpg', alt: 'Abstract 6' }
   ];
 
 
@@ -179,7 +252,7 @@ export default function InteractiveTicker() {
     <div className="bg- border-y border-y-gray-200/50 py-8">
       <InteractiveLoop
         images={demoImages}
-        speed={1.5}
+        speed={0.5}
         direction="left"
         interactive={true}
         gap={100}
