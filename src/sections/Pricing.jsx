@@ -76,7 +76,7 @@ const Pricing = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="mt-12 flex justify-between gap-8 flex-wrap"
         >
           {pricingCards.map((card, idx) => (

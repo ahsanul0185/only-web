@@ -6,6 +6,8 @@ import Marquee from '../components/Marquee';
 import OurExpertise from '../sections/OurExpertise';
 import OurWork from '../sections/OurWork';
 import Pricing from '../sections/Pricing';
+import FAQs from '../components/FAQ';
+
 
 const Home = () => {
   return (
@@ -15,6 +17,7 @@ const Home = () => {
       <OurExpertise />
       <OurWork />
       <Pricing />
+      <FAQs />
     </div>
   )
 }
