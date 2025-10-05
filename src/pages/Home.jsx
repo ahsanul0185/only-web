@@ -5,6 +5,7 @@ import InteractiveTicker from '../components/InterectiveLoop'
 import Marquee from '../components/Marquee';
 import OurExpertise from '../sections/OurExpertise';
 import OurWork from '../sections/OurWork';
+import Pricing from '../sections/Pricing';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <InteractiveTicker />
       <OurExpertise />
       <OurWork />
+      <Pricing />
     </div>
   )
 }
