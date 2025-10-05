@@ -9,6 +9,7 @@ import Pricing from '../sections/Pricing';
 import FAQs from '../components/FAQ';
 import Reviews from '../sections/Reviews';
 import CallToAction from '../sections/CallToAction';
+import PriceSlider from '../components/PriceSlider';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <OurWork />
       <Pricing />
       <FAQs />
+      {/* <PriceSlider /> */}
       <Reviews/>
       <CallToAction />
     </div>
