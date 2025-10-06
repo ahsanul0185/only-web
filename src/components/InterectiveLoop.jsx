@@ -249,7 +249,7 @@ export default function InteractiveTicker() {
 
 
   return (
-    <div className="bg- border-y border-y-gray-200/50 py-8">
+    <div className="bg-black/20 backdrop-blur-lg border-y border-y-gray-200/50 py-8">
       <InteractiveLoop
         images={demoImages}
         speed={0.5}

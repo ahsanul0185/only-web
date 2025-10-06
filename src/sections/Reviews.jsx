@@ -139,7 +139,7 @@ const Testimonials = () => {
                 className="px-1 py-2"
                 
               >
-                <div className="p-5 border-2 flex justify-between flex-col border-gray-500/30 min-h-52 sm:min-h-64 rounded-2xl  group  dark:hover:border-primary-light duration-300 select-none">
+                <div className="p-5 border-2 flex justify-between flex-col backdrop-blur-xl bg-black/20 border-gray-500/30 min-h-52 sm:min-h-64 rounded-2xl  group  dark:hover:border-primary-light duration-300 select-none">
                   <div>
                     <div className="flex gap-1">
                     {new Array(5).fill(0).map((star, idx) => (

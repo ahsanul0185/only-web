@@ -81,7 +81,7 @@ const FAQItem = ({ faq, isOpen, onToggle }) => {
    const { t } = useTranslation();
 
   return (
-    <div className="border border-gray-200/40 rounded-lg overflow-hidden transition-shadow">
+    <div className="border border-gray-200/40 rounded-lg bg-dark/20 backdrop-blur-xl overflow-hidden transition-shadow">
       <button
         onClick={onToggle}
         className="w-full px-5 md:px-8 flex items-center justify-between gap-4 py-4 md:py-5 text-left group"
