@@ -3,9 +3,9 @@ import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import SectionTitle from '../components/SectionTitle'
-import talentGif from "../assets/target.jpg";
-import targetGif from "../assets/target.jpg";
-import boostGif from "../assets/boost.jpg";
+import talentGif from "../assets/react.svg";
+import targetGif from "../assets/react.svg";
+import boostGif from "../assets/react.svg";
 import { useTranslation } from '../context/useTranslation';
 
 export const cards = [
