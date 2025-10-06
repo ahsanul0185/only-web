@@ -1,10 +1,11 @@
 import SplitText from "../components/SplitText";
+import SplitText2 from "../components/SplitText2";
 
 const CallToAction = () => {
   return (
     <div className="section-y-padding h-[50vh]">
       <div className="default-padding flex justify-center flex-col items-center">
-        <SplitText
+        <SplitText2
           text="Got a project?"
           className="uppercase text-7xl font-bold"
           delay={70}
@@ -19,7 +20,7 @@ const CallToAction = () => {
         />
         <br />
 
-        <SplitText
+        <SplitText2
           text="→ LET'S TALK"
           className="uppercase text-7xl font-bold cursor-pointer hover:translate-x-3 duration-300"
           delay={50}
@@ -40,3 +41,4 @@ const CallToAction = () => {
 };
 
 export default CallToAction;
+

@@ -1,14 +1,17 @@
 import React from 'react'
 import SplitText from './SplitText'
+import { useTranslation } from '../context/useTranslation'
+import SplitText2 from './SplitText2';
 
 const SectionTitle = ({children}) => {
+  const {t} = useTranslation();
   return (
     <div className='flex justify-center'>
-         <SplitText
-          text={children}
+         <SplitText2
+          text={t(children)}
           className="uppercase text-5xl text-center py-8 font-bold"
-          delay={70}
-          duration={0.5}
+          delay={20}
+          duration={0.3}
           ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}

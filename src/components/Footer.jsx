@@ -20,10 +20,10 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-semibold">Discover</h3>
           <ul className="flex flex-col gap-2">
-            <li><a href="#my-services" className="hover:text-blue-400 transition">MY SERVICES</a></li>
-            <li><a href="#my-creations" className="hover:text-blue-400 transition">MY CREATIONS</a></li>
+            <li><a href="#expertise" className="hover:text-blue-400 transition">MY SERVICES</a></li>
+            <li><a href="#work" className="hover:text-blue-400 transition">MY CREATIONS</a></li>
             <li><a href="#digital-products" className="hover:text-blue-400 transition">DIGITAL PRODUCTS</a></li>
-            <li><a href="#more-info" className="hover:text-blue-400 transition">MORE INFORMATION</a></li>
+            <li><a href="#about" className="hover:text-blue-400 transition">MORE INFORMATION</a></li>
             <li><a href="#contact" className="hover:text-blue-400 transition">CONTACT ME</a></li>
           </ul>
         </div>

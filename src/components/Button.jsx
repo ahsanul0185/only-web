@@ -21,7 +21,7 @@ const Button = ({ onClick, className, children }) => {
     className
   )}
 >
-  <span className="mix-blend-difference block">{children}</span>
+  <span className="mix-blend-difference flex items-center gap-2 justify-center">{children}</span>
   <span className="absolute -bottom-2 translate-y-[50%] left-1/2 -translate-x-1/2 size-2 rounded-full group-hover:size-52 transition-all -z-10 bg-white duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
 </button>
   );

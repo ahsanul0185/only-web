@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 const OurWork = () => {
   return (
     <div id="work" className="section-y-padding">
-      <SectionTitle>Our Works</SectionTitle>
+      <SectionTitle>Our Works***Nos Travaux</SectionTitle>
 
       <motion.div
         initial={{ opacity: 0 }}

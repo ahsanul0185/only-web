@@ -1,43 +1,46 @@
-import React, { useState } from "react";
 import logo from "/logo.jpg";
 import ContactButton from "./ContactButton";
 import { useNavigate } from "react-router-dom";
+import LangToggleButton from "./LangToggleButton";
+import { useTranslation } from "../context/useTranslation";
 
 const menuItems = [
   {
-    name : "Home",
-    hash : "#home"
+    name: "Home***Accueil",
+    hash: "#home",
   },
   {
-    name : "Our Work",
-    hash : "#work"
+    name: "Our Work***Nos réalisations",
+    hash: "#work",
   },
   {
-    name : "Price",
-    hash : "#price"
+    name: "Price***Tarifs",
+    hash: "#price",
   },
   {
-    name : "About",
-    hash : "#about"
-  }
-]
+    name: "About***À propos",
+    hash: "#about",
+  },
+];
 
 
 const Navbar = () => {
 
   const navigate = useNavigate();
+  const {t} = useTranslation();
 
   return (
     <div className="py-5 border-b border-b-gray-200/40 fixed w-full top-0 left-0 bg-black/75 z-50 backdrop-blur-md">
       <div className="default-padding flex items-center justify-between gap-8">
-        <div>
+        <div className="flex gap-10 items-center">
           <img onClick={() => navigate("/")} src={logo} className="w-24 cursor-pointer" alt="" />
+         <LangToggleButton/>
         </div>
 
         <div className="flex gap-14">
           <ul className="flex items-center gap-8 uppercase">
 
-            {menuItems.map((item, idx) => <LinkButton key={idx} hash={item.hash}>{item.name}</LinkButton>)}
+            {menuItems.map((item, idx) => <LinkButton key={idx} hash={item.hash}>{t(item.name)}</LinkButton>)}
           </ul>
           <ContactButton />
         </div>

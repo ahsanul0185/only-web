@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import PriceCalculator from './pages/PriceCalculator'
 import PolicyPage from './pages/PolicyPage'
+import { useLenis } from './context/useLenis'
 
 const App = () => {
 
@@ -13,6 +14,8 @@ const App = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useLenis();
 
   return (
     <div>
