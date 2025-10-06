@@ -12,27 +12,27 @@ const CALCULATOR_CONFIG = {
     label: 'Number of products to integrate + SEO product description',
     options: [
       { id: '1-5', label: '1 to 5 products (included)', price: 0 },
-      { id: '6-20', label: '6 to 20 products (+40€)', price: 40 },
-      { id: '21-50', label: '21 to 50 products (+100€)', price: 100 },
+      { id: '6-20', label: '6 to 20 products (+20€)', price: 20 },
+      { id: '21-50', label: '21 to 50 products (+70€)', price: 70 },
       { id: '50+', label: 'More than 50 products (custom quote)', price: 0 }
     ]
   },
   
   additionalFeatures: [
-    { id: 'googleReviews', label: 'Google Reviews Integration', price: 30 },
-    { id: 'contactForm', label: 'Contact Form', price: 10 },
-    { id: 'appointmentCalendar', label: 'Appointment Booking Calendar', price: 100 },
-    { id: 'liveChat', label: 'Live Chat', price: 80 },
-    { id: 'newsletter', label: 'Newsletter / Emailing', price: 30 },
-    { id: 'onlineQuote', label: 'Online Quote', price: 60 }
+    { id: 'googleReviews', label: 'Google Reviews Integration', price: 10 },
+    { id: 'contactForm', label: 'Contact Form', price: 5 },
+    { id: 'appointmentCalendar', label: 'Appointment Booking Calendar', price: 50 },
+    { id: 'liveChat', label: 'Live Chat', price: 40 },
+    { id: 'newsletter', label: 'Newsletter / Emailing', price: 15 },
+    { id: 'onlineQuote', label: 'Online Quote', price: 30 }
   ],
   
   numPages: {
     label: 'Number of Pages',
     options: [
       { id: '1-3', label: '1 to 3 pages (included)', price: 0 },
-      { id: '4-6', label: '4 to 6 pages (+50€)', price: 50 },
-      { id: '7+', label: '7 pages or more (+100€)', price: 100 }
+      { id: '4-6', label: '4 to 6 pages (included)', price: 0 },
+      { id: '7+', label: '7 pages or more (+100€)', price: 20 }
     ]
   },
   
@@ -45,25 +45,25 @@ const CALCULATOR_CONFIG = {
         label: 'Yes',
         price: 0,
         subOptions: [
-          { id: 'optimize', label: 'I want them optimized for SEO', price: 40 },
+          { id: 'optimize', label: 'I want them optimized for SEO', price: 0, isFree: true },
           { id: 'noModify', label: "I don't want to modify them", price: 0, isFree: true }
         ]
       },
-      {
-        id: 'no',
-        label: 'No',
-        description: 'I want WebLeague to create and optimize texts for SEO',
-        price: 80
-      }
+      // {
+      //   id: 'no',
+      //   label: 'No',
+      //   description: 'I want WebLeague to create and optimize texts for SEO',
+      //   price: 80
+      // }
     ]
   },
   
   bonusServices: [
     { id: 'visualIdentity', label: 'Visual Identity Creation', price: 150 },
-    { id: 'communityManagement', label: 'Community Management 1 month', price: 150 },
-    { id: 'googleBusiness', label: 'Google Business Page Creation', price: 30 },
+    // { id: 'communityManagement', label: 'Community Management 1 month', price: 150 },
+    { id: 'googleBusiness', label: 'Google Business Page Creation', price: 15 },
     { id: 'socialMedia', label: 'Profile photo + social media cover', price: 60 },
-    { id: 'discordServer', label: 'Discord Server Creation', price: 50 }
+    // { id: 'discordServer', label: 'Discord Server Creation', price: 50 }
   ],
   
   maintenanceOptions: [
@@ -131,9 +131,9 @@ export default function PriceCalculator() {
     });
 
     // Maintenance options
-    CALCULATOR_CONFIG.maintenanceOptions.forEach(option => {
-      if (maintenanceServices[option.id]) total += option.price;
-    });
+    // CALCULATOR_CONFIG.maintenanceOptions.forEach(option => {
+    //   if (maintenanceServices[option.id]) total += option.price;
+    // });
 
     return total;
   };
@@ -404,7 +404,7 @@ export default function PriceCalculator() {
           </div>
 
           {/* Maintenance & Autonomy */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <div className="flex items-center gap-3 mb-4">
               <Wrench className="w-6 h-6 text-white" />
               <h2 className="text-2xl font-bold text-white">Maintenance & Autonomy</h2>
@@ -441,7 +441,7 @@ export default function PriceCalculator() {
                 </label>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Total Price */}
           <div className="mt-8 p-6 bg-white rounded-xl border-2 border-white">
