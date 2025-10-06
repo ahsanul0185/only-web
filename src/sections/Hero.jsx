@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <div id="home" className="h-screen relative grid place-items-center overflow-clip">
 
-    <img src={imgCloud} className="fixed w-full -z-10 select-none" alt="" />
+    <img src={imgCloud} className="fixed w-full -z-10 select-none h-full object-cover" alt="" />
 
       <div className="w-fit mx-auto text-center">
         <SplitText2
@@ -40,7 +40,7 @@ const Hero = () => {
           threshold={0.1}
           rootMargin="-100px"
           textAlign="center"
-          animationDelay={0.3}
+          animationDelay={0.4}
         /> 
 
         <motion.p
@@ -49,7 +49,7 @@ const Hero = () => {
           transition={{
             duration: 2,
             ease: "ease",
-            delay : 0.6
+            delay : 1
           }}
           className="mt-7 text-base md:text-lg max-w-md px-6 text-center mx-auto"
         >
