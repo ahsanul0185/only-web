@@ -5,7 +5,7 @@ import Button from "./Button";
 
 const SocialLinks = ({className, iconClass}) => {
   const socialData = [
-    { icon: <FaWhatsapp />, link: "https://wa.me/your-number" },
+    // { icon: <FaWhatsapp />, link: "https://wa.me/your-number" },
     { icon: <FaInstagram />, link: "https://instagram.com/your-profile" },
     { icon: <FaTiktok />, link: "https://tiktok.com/@your-profile" },
   ];

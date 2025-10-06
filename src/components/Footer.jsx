@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-dark text-white py-12">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto px-4 flex justify-between">
         {/* Column 1: Logo & Info */}
         <div className="flex flex-col gap-4">
           <img src={logo} className="w-32" alt="Only Web" />
@@ -16,7 +16,6 @@ const Footer = () => {
             {t("Digital Products & Services***Produits et services numériques")}
           </p>
           <div className="flex flex-col gap-1 mt-4">
-            <p>{t("Contact***Contact")}: 07 49 70 10 03</p>
             <p>
               {t("Email***E-mail")}:{" "}
               <a
@@ -26,11 +25,14 @@ const Footer = () => {
                 onlywebco.com@gmail.com
               </a>
             </p>
+            <Link to="/privacy-policy" className="mt-4">
+          {t("LEGAL NOTICES***MENTIONS LÉGALES")}
+        </Link>
           </div>
         </div>
 
         {/* Column 2: Links */}
-        <div className="flex flex-col gap-4">
+        {/* <div className="flex flex-col gap-4">
           <h3 className="text-xl font-semibold">{t("Discover***Découvrir")}</h3>
           <ul className="flex flex-col gap-2">
             <li>
@@ -62,7 +64,7 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Column 3: Social / Extra */}
         <div className="flex flex-col gap-4">
@@ -79,11 +81,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-12 text-center">
-        <Link to="/privacy-policy" className="text-center">
-          {t("LEGAL NOTICES***MENTIONS LÉGALES")}
-        </Link>
-      </div>
+      {/* <div className="mt-12 text-center">
+        
+      </div> */}
     </footer>
   );
 };

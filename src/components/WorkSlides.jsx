@@ -1,11 +1,9 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import project1 from "../assets/projects/work-1.PNG"
-import project2 from "../assets/projects/work-2.PNG"
-import project3 from "../assets/projects/work-3.png"
-import project4 from "../assets/projects/work-4.png"
-import project5 from "../assets/projects/work-5.png"
+import project1 from "../assets/projects/work-3.png"
+import project2 from "../assets/projects/work-4.png"
+import project3 from "../assets/projects/work-5.png"
 
 
 // Import Swiper styles
@@ -28,12 +26,6 @@ const works = [
   },
   {
     image : project3
-  },
-  {
-    image : project4
-  },
-  {
-    image : project5
   }
 ]
 

@@ -32,12 +32,7 @@ export const faqs = {
       question: "What are the payment steps?***Quelles sont les étapes de paiement ?",
       answer:
         "I usually request a deposit upon signing, a mid-project payment based on progress, and the remaining balance upon final delivery.***Je demande généralement un acompte lors de la signature, un paiement intermédiaire en fonction de l’avancement du projet, et le solde restant à la livraison finale.",
-    },
-    {
-      question: "Do you offer tracking after delivery?***Proposez-vous un suivi après livraison ?",
-      answer:
-        "Yes! I offer post-delivery support and updates through maintenance packages tailored to your needs.***Oui ! Je propose un support après livraison et des mises à jour via des forfaits de maintenance adaptés à vos besoins.",
-    },
+    }
   ],
 };
 
