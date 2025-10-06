@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import SectionTitle from '../components/SectionTitle'
-import talentGif from "../assets/talent.jpg";
+import talentGif from "../assets/target.jpg";
 import targetGif from "../assets/target.jpg";
 import boostGif from "../assets/boost.jpg";
 import { useTranslation } from '../context/useTranslation';
