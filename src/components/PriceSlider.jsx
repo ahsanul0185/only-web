@@ -11,63 +11,64 @@ import Button from "./Button";
 
 import { motion } from "motion/react";
 import { CircleCheck } from "lucide-react";
+import { useTranslation } from "../context/useTranslation";
 
 export const pricingCards = [
   {
-    title: "Logo and Visual Identity",
+    title: "Logo and Visual Identity***Logo et identité visuelle",
     price: "200€",
-    deliveredIn: "DELIVERED IN 1 WEEK",
+    deliveredIn: "DELIVERED IN 1 WEEK***LIVRÉ EN 1 SEMAINE",
     description:
-      "Create a unique brand identity with a professional logo and cohesive visual design system.",
+      "Create a unique brand identity with a professional logo and cohesive visual design system.***Créez une identité de marque unique avec un logo professionnel et un système de design visuel cohérent.",
     features: [
-      "Logo & variations",
-      "Graphic charter",
-      "Visiting card",
-      "Support images",
-      "Mathys Webleague character",
+      "Logo & variations***Logo et variations",
+      "Graphic charter***Charte graphique",
+      "Visiting card***Carte de visite",
+      "Support images***Images de support",
+      "Mathys Webleague character***Personnage Mathys Webleague",
     ],
   },
   {
-    title: "E-commerce Website",
+    title: "E-commerce Website***Site e-commerce",
     price: "600€",
-    deliveredIn: "DELIVERED IN 4 WEEKS",
+    deliveredIn: "DELIVERED IN 4 WEEKS***LIVRÉ EN 4 SEMAINES",
     description:
-      "Complete online store with product management, cart, and secure payments.",
+      "Complete online store with product management, cart, and secure payments.***Boutique en ligne complète avec gestion des produits, panier et paiements sécurisés.",
     features: [
-      "E-commerce or showcase",
-      "Dynamic site",
-      "Responsive design",
-      "SEO ready",
-      "Training included",
+      "E-commerce or showcase***E-commerce ou vitrine",
+      "Dynamic site***Site dynamique",
+      "Responsive design***Design responsive",
+      "SEO ready***SEO prêt",
+      "Training included***Formation incluse",
     ],
   },
   {
-    title: "Showcase Website",
+    title: "Showcase Website***Site vitrine",
     price: "400€",
-    deliveredIn: "DELIVERED IN 3 WEEKS",
+    deliveredIn: "DELIVERED IN 3 WEEKS***LIVRÉ EN 3 SEMAINES",
     best : true,
     description:
-      "Perfect for businesses looking to establish an online presence.",
+      "Perfect for businesses looking to establish an online presence.***Parfait pour les entreprises souhaitant établir une présence en ligne.",
     features: [
-  "Custom visual identity integration",
-  "Modern responsive design",
-  "SEO optimized pages",
-  "Interactive elements",
-  "Fast loading & performance",
-],
+      "Custom visual identity integration***Intégration d'identité visuelle personnalisée",
+      "Modern responsive design***Design moderne et responsive",
+      "SEO optimized pages***Pages optimisées pour le SEO",
+      "Interactive elements***Éléments interactifs",
+      "Fast loading & performance***Chargement rapide et performance",
+    ],
   },
   {
-    title: "Logo and Flyer",
+    title: "Logo and Flyer***Logo et flyer",
     price: "80€",
-    deliveredIn: "DELIVERED IN 1 WEEK",
+    deliveredIn: "DELIVERED IN 1 WEEK***LIVRÉ EN 1 SEMAINE",
     description:
-      "Professional logo combined with eye-catching flyer designs to promote your brand.",
+      "Professional logo combined with eye-catching flyer designs to promote your brand.***Logo professionnel combiné à des flyers accrocheurs pour promouvoir votre marque.",
     features: [
-      "Custom logo design",
-      "Logo variations",
-      "Single-page flyer design",
-      "Print-ready files",
-      "Social media adaptation",
+      "Custom logo design***Création de logo personnalisé",
+      "Logo variations***Variations du logo",
+      "Single-page flyer design***Conception de flyer d'une page",
+      "Print-ready files***Fichiers prêts à imprimer",
+      "Social media adaptation***Adaptation pour les réseaux sociaux",
     ],
   },
 ];
@@ -146,6 +147,9 @@ const PriceSlider = () => {
 export default PriceSlider;
 
 const PriceCard = ({ card }) => {
+
+  const {t} = useTranslation();
+
   return (
     <motion.div
       whileHover={{
@@ -164,13 +168,13 @@ const PriceCard = ({ card }) => {
               : "border-gray-200/40 "
           }`}
         >
-          {card.title}
+          {t(card.title)}
         </span>
 
         <h1 className="text-4xl mt-12 mb-2 font-semibold text-white">
           {card.price}
         </h1>
-        <p className="text-sm text-white/50">{card.description}</p>
+        <p className="text-sm text-white/50">{t(card.description)}</p>
       </div>
 
       <hr className="border-gray-200/10" />
@@ -179,7 +183,7 @@ const PriceCard = ({ card }) => {
           {card.features.map((feature, idx) => (
             <li key={idx} className="flex items-center gap-3 group text-sm">
               <CircleCheck />
-              <span className="text-white/70">{feature}</span>
+              <span className="text-white/70">{t(feature)}</span>
             </li>
           ))}
         </ul>

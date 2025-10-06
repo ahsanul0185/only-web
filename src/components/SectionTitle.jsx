@@ -9,7 +9,7 @@ const SectionTitle = ({children}) => {
     <div className='flex justify-center'>
          <SplitText2
           text={t(children)}
-          className="uppercase text-5xl text-center py-8 font-bold"
+          className="uppercase text-3xl px-6 sm:text-4xl lg:text-5xl text-center md:py-8 font-bold"
           delay={20}
           duration={0.3}
           ease="power3.out"

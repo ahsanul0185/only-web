@@ -11,11 +11,60 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 import SectionTitle from '../components/SectionTitle'
 import Button from "../components/Button";
 import { IoStar } from "react-icons/io5";
+import { useTranslation } from "../context/useTranslation";
+
+
+
+const reviews = [
+  {
+    name: "Alex Johnson",
+    designation: "Startup Founder***Fondateur de startup",
+    profilePhoto: "https://randomuser.me/api/portraits/men/32.jpg",
+    description: "Only Web delivered our website on time and exceeded our expectations. The UI/UX is modern and responsive, and they were great at communicating every step of the project.***Only Web a livré notre site web à temps et a dépassé nos attentes. L’UI/UX est moderne et responsive, et ils ont très bien communiqué à chaque étape du projet.",
+    date: "November 25, 2024***25 novembre 2024",
+    rating: 5
+  },
+  {
+    name: "Sofia Martinez",
+    designation: "Product Manager***Chef de produit",
+    profilePhoto: "https://randomuser.me/api/portraits/women/45.jpg",
+    description: "Working with this agency was seamless. They understood our requirements quickly and delivered a polished web app that perfectly matches our brand. Highly recommended for any web development needs.***Travailler avec cette agence a été fluide. Ils ont rapidement compris nos besoins et ont livré une application web soignée qui correspond parfaitement à notre marque. Hautement recommandé pour tout besoin en développement web.",
+    date: "January 20, 2025***20 janvier 2025",
+    rating: 5
+  },
+  {
+    name: "Liam Chen",
+    designation: "CEO***PDG",
+    profilePhoto: "https://randomuser.me/api/portraits/men/22.jpg",
+    description: "The team at Only Web is extremely professional and detail-oriented. They took our ideas and transformed them into a fully functional, beautiful website. We will definitely collaborate again.***L’équipe d’Only Web est extrêmement professionnelle et attentive aux détails. Ils ont transformé nos idées en un site web entièrement fonctionnel et magnifique. Nous collaborerons certainement à nouveau.",
+    date: "November 22, 2024***22 novembre 2024",
+    rating: 5
+  },
+  {
+    name: "Emma Thompson",
+    designation: "Marketing Head***Responsable marketing",
+    profilePhoto: "https://randomuser.me/api/portraits/women/56.jpg",
+    description: "Great experience! The website is fast, responsive, and easy to navigate. The agency made the whole development process effortless and transparent.***Excellente expérience ! Le site web est rapide, responsive et facile à naviguer. L’agence a rendu tout le processus de développement simple et transparent.",
+    date: "December 18, 2024***18 décembre 2024",
+    rating: 5
+  },
+  {
+    name: "Rajiv Kapoor",
+    designation: "Entrepreneur***Entrepreneur",
+    profilePhoto: "https://randomuser.me/api/portraits/men/78.jpg",
+    description: "Excellent service! The team delivered a professional, high-quality website that perfectly represents our brand. Their communication and support were top-notch throughout the project.***Service excellent ! L’équipe a livré un site web professionnel et de haute qualité qui représente parfaitement notre marque. Leur communication et leur support ont été impeccables tout au long du projet.",
+    date: "December 29, 2024***29 décembre 2024",
+    rating: 5
+  }
+];
+
+
+
 
 const Reviews = () => {
   return (
     <div id="reviews" className="section-y-padding">
-      <SectionTitle>Reviews</SectionTitle>
+      <SectionTitle>Reviews***Avis</SectionTitle>
        <div className="default-padding">
          <Testimonials />
        </div>
@@ -29,54 +78,11 @@ export default Reviews
 
 
 
-const reviews = [
-  {
-    name: "Alex Johnson",
-    designation: "Startup Founder",
-    profilePhoto: "https://randomuser.me/api/portraits/men/32.jpg",
-    description: "Only Web delivered our website on time and exceeded our expectations. The UI/UX is modern and responsive, and they were great at communicating every step of the project.",
-    date: "November 25, 2024",
-    rating: 5
-  },
-  {
-    name: "Sofia Martinez",
-    designation: "Product Manager",
-    profilePhoto: "https://randomuser.me/api/portraits/women/45.jpg",
-    description: "Working with this agency was seamless. They understood our requirements quickly and delivered a polished web app that perfectly matches our brand. Highly recommended for any web development needs.",
-    date: "January 20, 2025",
-    rating: 5
-  },
-  {
-    name: "Liam Chen",
-    designation: "CEO",
-    profilePhoto: "https://randomuser.me/api/portraits/men/22.jpg",
-    description: "The team at Only Web is extremely professional and detail-oriented. They took our ideas and transformed them into a fully functional, beautiful website. We will definitely collaborate again.",
-    date: "November 22, 2024",
-    rating: 5
-  },
-  {
-    name: "Emma Thompson",
-    designation: "Marketing Head",
-    profilePhoto: "https://randomuser.me/api/portraits/women/56.jpg",
-    description: "Great experience! The website is fast, responsive, and easy to navigate. The agency made the whole development process effortless and transparent.",
-    date: "December 18, 2024",
-    rating: 5
-  },
-  {
-    name: "Rajiv Kapoor",
-    designation: "Entrepreneur",
-    profilePhoto: "https://randomuser.me/api/portraits/men/78.jpg",
-    description: "Excellent service! The team delivered a professional, high-quality website that perfectly represents our brand. Their communication and support were top-notch throughout the project.",
-    date: "December 29, 2024",
-    rating: 5
-  }
-];
-
-
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
+   const { t } = useTranslation();
 
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -148,11 +154,11 @@ const Testimonials = () => {
                   </div>
 
                   <p className="text-white text-sm mt-6 duration-300">
-                    {review.description.split(" ").filter((_, idx) => idx < 20).join(" ")} <a className="">...Read more</a>
+                    {t(review.description).split(" ").filter((_, idx) => idx < 20).join(" ")} <a className="">...Read more</a>
                   </p>
 
                   <p className="text-white/50 text-xs mt-2 italic duration-300">
-                    {review.date}
+                    {t(review.date)}
                   </p>
                   </div>
 
@@ -160,9 +166,9 @@ const Testimonials = () => {
                     <img className="size-10  aspect-square rounded-full" src={review.profilePhoto} alt="" />
                     <div>
                                         <h3 className="text-sm  flex items-center gap-2">
-                    {review.name} <RiVerifiedBadgeFill className="size-4 text-blue-600" />
+                    {t(review.name)} <RiVerifiedBadgeFill className="size-4 text-blue-600" />
                   </h3>
-                  <span className="text-xs text-white/50 block">{review.designation}</span>
+                  <span className="text-xs text-white/50 block">{t(review.designation)}</span>
                     </div>
                   </div>
                 </div>

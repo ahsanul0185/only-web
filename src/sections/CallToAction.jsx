@@ -1,13 +1,17 @@
 import SplitText from "../components/SplitText";
 import SplitText2 from "../components/SplitText2";
+import { useTranslation } from "../context/useTranslation";
 
 const CallToAction = () => {
+
+   const { t } = useTranslation();
+
   return (
     <div className="section-y-padding h-[50vh]">
       <div className="default-padding flex justify-center flex-col items-center">
         <SplitText2
-          text="Got a project?"
-          className="uppercase text-7xl font-bold"
+          text={t("Got a project?***Vous avez un projet?")}
+          className="uppercase text-5xl md:text-6xl lg:text-7xl font-bold"
           delay={70}
           duration={0.5}
           ease="power3.out"
@@ -21,8 +25,8 @@ const CallToAction = () => {
         <br />
 
         <SplitText2
-          text="→ LET'S TALK"
-          className="uppercase text-7xl font-bold cursor-pointer hover:translate-x-3 duration-300"
+          text={t("→ LET'S TALK***PARLONS-EN")}
+          className="uppercase text-5xl md:text-6xl lg:text-7xl font-bold cursor-pointer hover:translate-x-3 duration-300"
           delay={50}
           duration={0.5}
           ease="power3.out"

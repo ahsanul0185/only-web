@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-14">
-          <ul className="flex items-center gap-8 uppercase">
+          <ul className="hidden md:flex items-center gap-8 uppercase">
 
             {menuItems.map((item, idx) => <LinkButton key={idx} hash={item.hash}>{t(item.name)}</LinkButton>)}
           </ul>
