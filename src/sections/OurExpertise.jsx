@@ -26,6 +26,7 @@ export const cards = [
   },
 ];
 
+
 const OurExpertise = () => {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { 
