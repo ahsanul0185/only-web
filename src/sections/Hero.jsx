@@ -1,13 +1,17 @@
 import { motion } from "motion/react";
 import { useTranslation } from "../context/useTranslation";
 import SplitText2 from "../components/SplitText2";
+import imgCloud from "../assets/cloud.jpg"
 
 const Hero = () => {
 
   const {t} = useTranslation();
 
   return (
-    <div id="home" className="h-screen relative grid place-items-center">
+    <div id="home" className="h-screen relative grid place-items-center overflow-clip">
+
+    <img src={imgCloud} className="absolute" alt="" />
+
       <div className="w-fit mx-auto text-center">
         <SplitText2
           text={t("Your Vision,***Votre vision")}
