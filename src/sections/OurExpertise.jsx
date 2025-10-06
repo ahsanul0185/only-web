@@ -89,9 +89,9 @@ const ExpertiseCard = React.forwardRef(({card, variants}, ref) => {
         <motion.div
             ref={ref}
             variants={variants}
-            className='md:h-[500px] w-full md:flex-[30%] bg-dark border border-gray-200/40 rounded-lg p-4 md:p-6 flex flex-col gap-4'
+            className='md:h-[500px] w-full md:flex-[30%] bg-black border border-gray-200/40 rounded-lg p-4 md:p-6 flex flex-col gap-4'
         >
-            <img src={card.image} className='w-full h-[60%] border border-gray-200/40 rounded-lg object-cover' alt={card.title} />
+            <img src={card.image} className='w-full h-[60%] bo rder border-gray-200/40 rounded-lg object-cover' alt={card.title} />
             <div className='flex flex-col gap-4'>
                 <h2 className='text-lg md:text-2xl font-semibold'>{t(card.title)}</h2>
                 <p className='text-white/50 text-sm md:text-base'>{t(card.desc)}</p>
