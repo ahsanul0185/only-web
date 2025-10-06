@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <div id="home" className="h-screen relative grid place-items-center overflow-clip">
 
-    <img src={imgCloud} className="absolute w-full -z-10 select-none" alt="" />
+    <img src={imgCloud} className="fixed w-full -z-10 select-none" alt="" />
 
       <div className="w-fit mx-auto text-center">
         <SplitText2
