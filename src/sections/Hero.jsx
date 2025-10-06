@@ -83,7 +83,7 @@ const Hero = () => {
   return (
     <div id="home" className="h-screen relative grid place-items-center">
 
-      <div style={{ width: '100%', height: '800px', willChange: 'auto'}} className="absolute z-20">
+      {/* <div style={{ width: '100%', height: '800px', willChange: 'auto'}} className="absolute z-20">
   <Orb
     hoverIntensity={0.5}
     rotateOnHover={true}
@@ -91,7 +91,7 @@ const Hero = () => {
     forceHoverState={false}
     maxFPS={30}
   />
-</div>
+</div> */}
       <div className="w-fit mx-auto text-center">
         <SplitText2
           text={t("Your Vision,***Votre vision")}
