@@ -29,11 +29,11 @@ export const pricingCards = [
     ],
   },
   {
-    title: "Logo and Visual Identity***Logo et identité visuelle",
+    title: "Customization***Personnalisé",
     price: "200€",
     deliveredIn: "DELIVERED IN 1 WEEK***LIVRÉ EN 1 SEMAINE",
     description:
-      "Create a unique brand identity with a professional logo and cohesive visual design system.***Créez une identité de marque unique avec un logo professionnel et un système de design visuel cohérent.",
+      "Customize your website to reflect your style with our site creation calculator.***Personnalise ton site web à ton image grâce à notre calculatrice de création de site. ",
     features: [
       "Logo & variations***Logo et variations",
       "Graphic charter***Charte graphique",

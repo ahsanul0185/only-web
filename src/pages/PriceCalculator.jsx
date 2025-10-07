@@ -110,8 +110,7 @@ const CALCULATOR_CONFIG = {
             id: "optimize",
             label:
               "I want them optimized for SEO***Je veux qu’ils soient optimisés pour le SEO",
-            price: 0,
-            isFree: true,
+            price: 30,
           },
           {
             id: "noModify",
