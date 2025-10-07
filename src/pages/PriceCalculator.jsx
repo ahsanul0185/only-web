@@ -9,7 +9,8 @@ import {
   ShoppingCart,
 } from "lucide-react";
 import { useTranslation } from "../context/useTranslation";
-
+import { useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 
 const CALCULATOR_CONFIG = {
   siteTypes: [
@@ -177,6 +178,7 @@ export default function PriceCalculator() {
   const [maintenanceServices, setMaintenanceServices] = useState({});
 
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const calculateTotal = () => {
     // Base price
@@ -661,18 +663,21 @@ export default function PriceCalculator() {
           </div> */}
 
           {/* Total Price */}
-          <div className="mt-8 p-6 bg-white rounded-xl border-2 border-white">
+          <div className="mt-8 p-6 bg-  rounded-xl border-2 border-gray-200/40">
             <div className="text-center space-y-2">
-              <h3 className="text-xl font-bold text-black flex items-center justify-center gap-2">
+              <h3 className="text-xl font-bold text- black flex items-center justify-center gap-2">
                 {t("💰 Estimated Total Price***💰 Prix total estimé")}
               </h3>
-              <div className="text-5xl font-bold text-black">{total} €</div>
-              <p className="text-gray-600 text-sm">
+              <div className="text-5xl font-bold text- black">{total} €</div>
+              <p className="text-gray-300 text-sm">
                 {t("Indicative price including VAT***Prix indicatif TTC")}
               </p>
-              <button className="mt-4 px-8 py-3 bg-black text-white font-semibold rounded-lg hover:bg-zinc-800 transition shadow-lg">
-                {t("Request a Custom Quote***Demander un devis personnalisé")}
-              </button>
+              <Button
+                onClick={() => navigate("/contact")}
+                className="mt-4 px-8 py-3 bg-black text-white font-semibold rounded-lg hover:bg-zinc-800 transition shadow-lg"
+              >
+                {t("Contact us *** Contactez-nous")}
+              </Button>
             </div>
           </div>
         </div>
