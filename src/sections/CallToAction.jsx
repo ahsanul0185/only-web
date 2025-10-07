@@ -1,10 +1,11 @@
-import SplitText from "../components/SplitText";
+import { useNavigate } from "react-router-dom";
 import SplitText2 from "../components/SplitText2";
 import { useTranslation } from "../context/useTranslation";
 
 const CallToAction = () => {
 
    const { t } = useTranslation();
+   const navigate = useNavigate();
 
   return (
     <div className="section-y-padding h-[50vh]">
@@ -37,7 +38,7 @@ const CallToAction = () => {
           rootMargin="-100px"
           textAlign="center"
           animationDelay={0.3}
-          onClick={() => alert("clicked")}
+          onClick={() => navigate("/contact")}
         />
       </div>
     </div>

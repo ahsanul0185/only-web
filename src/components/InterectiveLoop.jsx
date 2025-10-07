@@ -237,12 +237,12 @@ const InteractiveLoop = ({
 
 export default function InteractiveTicker() {
   const demoImages = [
-    { src: '/logo.jpg', alt: 'Abstract 1' },
-    { src: '/logo.jpg', alt: 'Abstract 2' },
-    { src: '/logo.jpg', alt: 'Abstract 3' },
-    { src: '/logo.jpg', alt: 'Abstract 4' },
-    { src: '/logo.jpg', alt: 'Abstract 5' },
-    { src: '/logo.jpg', alt: 'Abstract 6' }
+    { src: '/logo.PNG', alt: 'Abstract 1' },
+    { src: '/logo.PNG', alt: 'Abstract 2' },
+    { src: '/logo.PNG', alt: 'Abstract 3' },
+    { src: '/logo.PNG', alt: 'Abstract 4' },
+    { src: '/logo.PNG', alt: 'Abstract 5' },
+    { src: '/logo.PNG', alt: 'Abstract 6' }
   ];
 
 

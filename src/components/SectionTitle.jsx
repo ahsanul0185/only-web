@@ -1,5 +1,4 @@
 import React from 'react'
-import SplitText from './SplitText'
 import { useTranslation } from '../context/useTranslation'
 import SplitText2 from './SplitText2';
 

@@ -4,14 +4,11 @@ import { useTranslation } from "../context/useTranslation";
 export default function PolicyPage() {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-black text-white p-6 md:p-12 pt-32 md:pt-32">
+    <div className="min-h-screen bg-black text-white py-6 md:p-12 pt-32 md:pt-32">
       <div className="default-padding mx-auto bg-black/90  space-y-8">
-
-
-    
-          <h1 className="text-5xl md:text-6xl font-light tracking-tight mb-4 pb-8 border-b border-gray-200/40">{t("Legal Notices & Policy***Mentions légales & Politique")}</h1>
-
-
+        <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-4 pb-8 border-b border-gray-200/40">
+          {t("Legal Notices & Policy***Mentions légales & Politique")}
+        </h1>
 
         <p className="text-gray-300">
           {t(
