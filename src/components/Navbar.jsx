@@ -48,11 +48,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          <h2 className="text-2xl font-semibold">Only Web</h2>
+          <h2 className="hidden sm:block text-xl md:text-2xl font-semibold">Only Web</h2>
 
           <div className="flex gap-6 items-center">
             {/* Desktop Menu */}
-            <ul className="hidden md:flex items-center gap-8 uppercase">
+            <ul className="hidden lg:flex items-center gap-8 uppercase">
               {menuItems.map((item, idx) => (
                 <LinkButton key={idx} hash={item.hash}>
                   {t(item.name)}
@@ -60,14 +60,14 @@ const Navbar = () => {
               ))}
             </ul>
             
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <ContactButton />
             </div>
 
             {/* Hamburger Icon */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 z-50"
+              className="lg:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 z-50"
               aria-label="Toggle menu"
             >
               <span
@@ -103,7 +103,9 @@ const Navbar = () => {
 export default Navbar;
 
 const LinkButton = ({ hash = "#", children }) => {
+  const navigate = useNavigate();
   const handleClick = () => {
+    navigate("/")
     const element = document.querySelector(hash);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -131,7 +133,7 @@ const MobileMenu = ({ isOpen, onClose, menuItems }) => {
 
   return (
     <div
-      className={`md:hidden fixed inset-0 bg-black z-40 transition-all duration-300 ${
+      className={`lg:hidden fixed inset-0 bg-black z-40 transition-all duration-300 ${
         isOpen
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
@@ -179,7 +181,9 @@ const MobileMenu = ({ isOpen, onClose, menuItems }) => {
 
 
 const MobileLinkButton = ({ hash = "#", children, onClick }) => {
+  const navigate = useNavigate();
   const handleClick = () => {
+    navigate("/")
     const element = document.querySelector(hash);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });

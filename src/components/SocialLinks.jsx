@@ -14,9 +14,9 @@ const SocialLinks = ({className, iconClass}) => {
     <div className={twMerge(`py-4`, className)}>
       <div className="max-w-3xl mx-auto flex gap-4">
         {socialData.map((item, idx) => (
-          <Button  className={twMerge(`text-white text-2xl transition-colors p-2 rounded-lg border-gray-200/40`, iconClass)}>
+          <Button key={idx} className={twMerge(`text-white text-2xl transition-colors p-2 rounded-lg border-gray-200/40`, iconClass)}>
             <a
-            key={idx}
+            
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
