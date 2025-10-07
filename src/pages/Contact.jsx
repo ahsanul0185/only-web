@@ -157,9 +157,7 @@ export default function ContactPage() {
         <span>{t("LOCATION *** EMPLACEMENT")}</span>
       </div>
       <p className="text-lg">
-        123 Business Street
-        <br />
-        New York, NY 10001
+       Paris, France
       </p>
     </div>
   </div>

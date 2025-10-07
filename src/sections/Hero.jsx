@@ -53,7 +53,7 @@ const Hero = () => {
           }}
           className="mt-7 text-base md:text-lg max-w-md px-6 text-center mx-auto"
         >
-          {t("From concept to creation, we turn your brand into an online success story.***De l’idée à la réalisation, nous faisons briller votre marque en ligne.")}
+          {t("We bring your vision to life and turn your online presence into a true asset.***Nous donnons vie à votre vision et faisons de votre présence en ligne un véritable atout.")}
   
         </motion.p>
       </div>
