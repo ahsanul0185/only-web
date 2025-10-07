@@ -7,7 +7,7 @@ const SocialLinks = ({className, iconClass}) => {
   const socialData = [
     // { icon: <FaWhatsapp />, link: "https://wa.me/your-number" },
     { icon: <FaInstagram />, link: "https://www.instagram.com/onlywebco?igsh=MXh4MjlkOW8yeTU1cg%3D%3D&utm_source=qr" },
-    { icon: <FaTiktok />, link: "https://www.tiktok.com/@onlyweb8?_t=ZS-90LkRN6Gp20&_r=1" },
+    { icon: <FaTiktok />, link: "www.tiktok.com/@onlywebco" },
   ];
 
   return (
