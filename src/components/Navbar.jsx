@@ -48,6 +48,8 @@ const Navbar = () => {
             </div>
           </div>
 
+          <h2 className="text-2xl font-semibold">Only Web</h2>
+
           <div className="flex gap-6 items-center">
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-8 uppercase">

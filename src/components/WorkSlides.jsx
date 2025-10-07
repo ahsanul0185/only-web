@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import project1 from "../assets/projects/work-3.png"
 import project2 from "../assets/projects/work-4.png"
 import project3 from "../assets/projects/work-5.png"
-import project4 from "../assets/projects/work-6.jpg"
 
 
 // Import Swiper styles
@@ -27,9 +26,6 @@ const works = [
   },
   {
     image : project3
-  },
-  {
-    image : project4
   }
 ]
 
