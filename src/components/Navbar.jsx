@@ -46,9 +46,9 @@ const Navbar = () => {
             <div className="hidden md:block">
               <LangToggleButton />
             </div>
+            <h2 className="hidden sm:block text-xl md:text-2xl font-semibold">Only Web</h2>
           </div>
 
-          <h2 className="hidden sm:block text-xl md:text-2xl font-semibold">Only Web</h2>
 
           <div className="flex gap-6 items-center">
             {/* Desktop Menu */}
