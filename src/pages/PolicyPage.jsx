@@ -27,10 +27,10 @@ export default function PolicyPage() {
             <li>
               {t("Email***E-mail")}:{" "}
               <a
-                href="mailto:onlywebco.com@gmail.com"
+                href="mailto:onlyweb@onlywebco.com"
                 className="text-white underline"
               >
-                onlywebco.com@gmail.com
+                onlyweb@onlywebco.com
               </a>
             </li>
             <li>{t("Region***Région")}: </li>
@@ -44,10 +44,10 @@ export default function PolicyPage() {
           <p className="text-gray-300">
             {t("Only Web Team***Équipe Only Web")} -{" "}
             <a
-              href="mailto:onlywebco.com@gmail.com"
+              href="mailto:onlyweb@onlywebco.com"
               className="text-white underline"
             >
-              onlywebco.com@gmail.com
+              onlyweb@onlywebco.com
             </a>
           </p>
 

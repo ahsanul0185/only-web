@@ -1,59 +1,3 @@
-// import { Link, useNavigate } from "react-router-dom";
-// import SocialLinks from "./SocialLinks";
-// import logo from "/logo.PNG";
-// import { useTranslation } from "../context/useTranslation";
-
-// const Footer = () => {
-//   const { t } = useTranslation();
-//   const navigate = useNavigate();
-
-//   return (
-//     <footer className="bg-dark text-white py-12">
-//       <div className="max-w-6xl mx-auto px-4 flex justify-between">
-//         {/* Column 1: Logo & Info */}
-//         <div className="flex flex-col gap-4">
-//           <img onClick={() => navigate("/")} src={logo} className="w-32" alt="Only Web" />
-//           <p>
-//             {t("Digital Products & Services***Produits et services numériques")}
-//           </p>
-//           <div className="flex flex-col gap-1 mt-4">
-//             <p>
-//               {t("Email***E-mail")}:{" "}
-//               <a
-//                 href="mailto:contact@webleague.fr"
-//                 className="text-blue-400 hover:underline"
-//               >
-//                 onlywebco.com@gmail.com
-//               </a>
-//             </p>
-//             <Link to="/privacy-policy" className="mt-4">
-//           {t("LEGAL NOTICES***MENTIONS LÉGALES")}
-//         </Link>
-//           </div>
-//         </div>
-
-//         {/* Column 3: Social / Extra */}
-//         <div className="flex flex-col gap-4">
-//           <h3 className="text-xl font-semibold">
-//             {t("Follow Us***Suivez-nous")}
-//           </h3>
-//           <SocialLinks iconClass="border" />
-//           <p className="mt-4 text-white/50 text-sm">
-//             &copy; {new Date().getFullYear()}{" "}
-//             {t(
-//               "Only Web. All rights reserved.***Only Web. Tous droits réservés."
-//             )}
-//           </p>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
-
-
 import { Link, useNavigate } from "react-router-dom";
 import SocialLinks from "./SocialLinks";
 import logo from "/logo.PNG";
@@ -105,11 +49,11 @@ const Footer = () => {
                 <div className="flex items-start gap-2">
                   <span className="text-white/50 text-sm mt-0.5">{t("Email***E-mail")}:</span>
                   <a
-                    href="mailto:onlywebco.com@gmail.com"
+                    href="mailto:onlyweb@onlywebco.com"
                     className="text-white hover:text-white/70 transition-colors group"
                   >
                     <span className="border-b border-white/0 group-hover:border-white/50 transition-colors">
-                      onlywebco.com@gmail.com
+                      onlyweb@onlywebco.com
                     </span>
                   </a>
                 </div>

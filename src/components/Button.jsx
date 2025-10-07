@@ -1,11 +1,13 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const Button = ({ onClick, className, children }) => {
+const Button = ({ onClick, className, type="button", disabled=false, children }) => {
   return (
 
 <button
   onClick={onClick}
+  type={type}
+  disabled={disabled}
   className={twMerge(
     `px-6 py-2 relative group border rounded-sm z-0 cursor-pointer overflow-clip`,
     className
