@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "/logo.jpg";
+import logo from "/logo.PNG";
 import Modal from "./Modal";
 import SocialLinks from "./SocialLinks";
 import { useTranslation } from "../context/useTranslation";
@@ -46,17 +46,14 @@ const ProfileCard = () => {
               )}
             </p>
 
-            <p className="py-8">
+            <p className="py-8 text-white/80">
               {t(
                 "We craft unique websites and visual identities that help businesses shine online. Our mission is to blend creativity and performance to deliver custom solutions that truly reflect your brand.***Nous créons des sites web et des identités visuelles uniques qui permettent aux entreprises de briller en ligne. Notre mission est de mêler créativité et performance pour fournir des solutions personnalisées qui reflètent vraiment votre marque."
               )}
             </p>
 
             <p>
-              <span>{t("Phone***Téléphone")}: </span> +33 00 00 00 00
-            </p>
-            <p>
-              <span>{t("Email***E-mail")}: </span> onlywebco.com@gmail.com
+              <span className="text-white/80">{t("Email***E-mail")}: </span> onlywebco.com@gmail.com
             </p>
           </div>
         </div>

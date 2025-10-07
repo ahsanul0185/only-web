@@ -30,7 +30,7 @@ const Modal = ({ showModal, setShowModal, children }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setShowModal(false)}
-          className="fixed top-0 left-0 w-full h-full bg-black/50 z-[9999] grid place-items-center p-4"
+          className="fixed top-0 left-0 w-full h-full backdrop-blur-md bg-black/50 z-[9999] grid place-items-center p-4"
         >
           <motion.div
             key="modal"
@@ -39,10 +39,10 @@ const Modal = ({ showModal, setShowModal, children }) => {
             exit={{ opacity: 0, scale: 1, x : -50 }}
             transition={{ duration: 0.3 }} // smooth duration
             onClick={(e) => e.stopPropagation()}
-            className="bg-white text-dark dark:bg-primaryDark border border-gray-300/40 rounded-lg p-5 relative max-w-4xl w-full"
+            className="bg-black text-white dark:bg-primaryDark border border-gray-300/40 rounded-lg p-5 relative max-w-4xl w-full"
           >
             <button
-              className="absolute top-3 right-3 text-2xl cursor-pointer text-dark"
+              className="absolute top-3 right-3 text-2xl cursor-pointer text-white"
               onClick={() => setShowModal(false)}
             >
               <X />

@@ -1,4 +1,4 @@
-import logo from "/logo.jpg";
+import logo from "/logo.PNG";
 import ContactButton from "./ContactButton";
 import { useNavigate } from "react-router-dom";
 import LangToggleButton from "./LangToggleButton";

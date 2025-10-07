@@ -63,7 +63,7 @@ const OurExpertise = () => {
 
     return (
         <div ref={sectionRef} className='section-y-padding'>
-            <SectionTitle>How We Empower You?***Comment vous donnons-nous du pouvoir ?</SectionTitle>
+            <SectionTitle>How We Empower You?***Comment pouvons-nous vous aider</SectionTitle>
             <motion.div 
                 className='mt-12 default-padding flex justify-between gap-8 flex-wrap'
                 variants={containerVariants}
