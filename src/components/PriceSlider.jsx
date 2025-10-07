@@ -14,6 +14,20 @@ import { CircleCheck } from "lucide-react";
 import { useTranslation } from "../context/useTranslation";
 
 export const pricingCards = [
+    {
+    title: "Logo and Flyer***Logo et flyer",
+    price: "80€",
+    deliveredIn: "DELIVERED IN 1 WEEK***LIVRÉ EN 1 SEMAINE",
+    description:
+      "Professional logo combined with eye-catching flyer designs to promote your brand.***Logo professionnel combiné à des flyers accrocheurs pour promouvoir votre marque.",
+    features: [
+      "Custom logo design***Création de logo personnalisé",
+      "Logo variations***Variations du logo",
+      "Single-page flyer design***Conception de flyer d'une page",
+      "Print-ready files***Fichiers prêts à imprimer",
+      "Social media adaptation***Adaptation pour les réseaux sociaux",
+    ],
+  },
   {
     title: "Logo and Visual Identity***Logo et identité visuelle",
     price: "200€",
@@ -28,24 +42,10 @@ export const pricingCards = [
     ],
   },
   {
-    title: "E-commerce Website***Site e-commerce",
-    price: "600€",
-    deliveredIn: "DELIVERED IN 4 WEEKS***LIVRÉ EN 4 SEMAINES",
-        best : true,
-    description:
-      "Complete online store with product management, cart, and secure payments.***Boutique en ligne complète avec gestion des produits, panier et paiements sécurisés.",
-    features: [
-      "E-commerce or showcase***E-commerce ou vitrine",
-      "Dynamic site***Site dynamique",
-      "Responsive design***Design responsive",
-      "SEO ready***SEO prêt",
-      "Training included***Formation incluse",
-    ],
-  },
-  {
     title: "Showcase Website***Site vitrine",
     price: "400€",
     deliveredIn: "DELIVERED IN 3 WEEKS***LIVRÉ EN 3 SEMAINES",
+            best : true,
     description:
       "Perfect for businesses looking to establish an online presence.***Parfait pour les entreprises souhaitant établir une présence en ligne.",
     features: [
@@ -56,20 +56,21 @@ export const pricingCards = [
       "Fast loading & performance***Chargement rapide et performance",
     ],
   },
-  {
-    title: "Logo and Flyer***Logo et flyer",
-    price: "80€",
-    deliveredIn: "DELIVERED IN 1 WEEK***LIVRÉ EN 1 SEMAINE",
+    {
+    title: "E-commerce Website***Site e-commerce",
+    price: "600€",
+    deliveredIn: "DELIVERED IN 4 WEEKS***LIVRÉ EN 4 SEMAINES",
     description:
-      "Professional logo combined with eye-catching flyer designs to promote your brand.***Logo professionnel combiné à des flyers accrocheurs pour promouvoir votre marque.",
+      "Complete online store with product management, cart, and secure payments.***Boutique en ligne complète avec gestion des produits, panier et paiements sécurisés.",
     features: [
-      "Custom logo design***Création de logo personnalisé",
-      "Logo variations***Variations du logo",
-      "Single-page flyer design***Conception de flyer d'une page",
-      "Print-ready files***Fichiers prêts à imprimer",
-      "Social media adaptation***Adaptation pour les réseaux sociaux",
+      "E-commerce or showcase***E-commerce ou vitrine",
+      "Dynamic site***Site dynamique",
+      "Responsive design***Design responsive",
+      "SEO ready***SEO prêt",
+      "Training included***Formation incluse",
     ],
   },
+
 ];
 
 const PriceSlider = () => {
