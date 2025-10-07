@@ -25,13 +25,13 @@ export const pricingCards = [
       "Graphic charter***Charte graphique",
       "Visiting card***Carte de visite",
       "Support images***Images de support",
-      "Mathys Webleague character***Personnage Mathys Webleague",
     ],
   },
   {
     title: "E-commerce Website***Site e-commerce",
     price: "600€",
     deliveredIn: "DELIVERED IN 4 WEEKS***LIVRÉ EN 4 SEMAINES",
+        best : true,
     description:
       "Complete online store with product management, cart, and secure payments.***Boutique en ligne complète avec gestion des produits, panier et paiements sécurisés.",
     features: [
@@ -46,7 +46,6 @@ export const pricingCards = [
     title: "Showcase Website***Site vitrine",
     price: "400€",
     deliveredIn: "DELIVERED IN 3 WEEKS***LIVRÉ EN 3 SEMAINES",
-    best : true,
     description:
       "Perfect for businesses looking to establish an online presence.***Parfait pour les entreprises souhaitant établir une présence en ligne.",
     features: [

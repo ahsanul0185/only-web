@@ -58,7 +58,7 @@ const WorkSlides = () => {
         onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={3}
         freeMode={true}
                      autoplay={{
           delay: 3000,
@@ -66,7 +66,7 @@ const WorkSlides = () => {
         }}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs, Autoplay]}
-        className="mySwiper cursor-grab"
+        className="mySwiper cursor-grab "
       >
         {works.map((work, idx) => <SwiperSlide key={idx}> <img src={work.image} /></SwiperSlide>)}
       </Swiper>
