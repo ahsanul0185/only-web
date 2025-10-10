@@ -30,7 +30,7 @@ export default function ContactPage() {
 
     const formData = new FormData(e.target);
 
-    formData.append("access_key", "57376694-2343-4f19-a192-24517b2db442");
+    formData.append("access_key", "fd187ebd-a5e1-4151-88c7-d4c36f58adb0");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -42,9 +42,9 @@ export default function ContactPage() {
     if (data.success) {
       setSubmitted(true);
       setIsLoading(false);
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: "", email: "", subject: "", message: "" });
       }, 3000);
     } else {
       setIsLoading(false);
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     <Mail className="w-4 h-4" />
                     <span>{t("EMAIL *** COURRIEL")}</span>
                   </div>
-                  <p className="text-lg">onlyweb@onlywebco.com</p>
+                  <p className="text-lg">contact@onlywebco.com </p>
                 </div>
 
                 {/* <div className="space-y-2 bg-dark p-5 rounded-lg">

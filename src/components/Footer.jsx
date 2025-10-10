@@ -49,11 +49,11 @@ const Footer = () => {
                 <div className="flex items-start gap-2">
                   <span className="text-white/50 text-sm mt-0.5">{t("Email***E-mail")}:</span>
                   <a
-                    href="mailto:onlyweb@onlywebco.com"
+                    href="mailto:contact@onlywebco.com"
                     className="text-white hover:text-white/70 transition-colors group"
                   >
                     <span className="border-b border-white/0 group-hover:border-white/50 transition-colors">
-                      onlyweb@onlywebco.com
+                     contact@onlywebco.com 
                     </span>
                   </a>
                 </div>

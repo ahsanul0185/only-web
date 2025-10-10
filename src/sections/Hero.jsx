@@ -10,7 +10,15 @@ const Hero = () => {
   return (
     <div id="home" className="h-screen relative grid place-items-center overflow-clip">
 
-    <img src={imgCloud} className="fixed w-full -z-10 select-none h-full object-cover" alt="" />
+    {/* <img src={imgCloud} className="fixed w-full -z-10 select-none h-full object-cover" alt="" /> */}
+        <motion.img
+      src={imgCloud}
+      alt=""
+      className="fixed w-full h-full -z-10 select-none object-cover"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
+    />
 
       <div className="w-fit mx-auto text-center">
         <SplitText2
@@ -51,7 +59,7 @@ const Hero = () => {
             ease: "ease",
             delay : 1
           }}
-          className="mt-7 text-base md:text-lg max-w-md px-6 text-center mx-auto"
+          className="mt-7 text-base md:text-lg max-w-md md:max-w-2xl px-6 text-center mx-auto"
         >
           {t("We bring your vision to life and turn your online presence into a true asset.***Nous donnons vie à votre vision et faisons de votre présence en ligne un véritable atout.")}
   

@@ -53,7 +53,7 @@ const ProfileCard = () => {
             </p>
 
             <p>
-              <span className="text-white/80">{t("Email***E-mail")}: </span> onlyweb@onlywebco.com
+              <span className="text-white/80">{t("Email***E-mail")}: </span> contact@onlywebco.com 
             </p>
           </div>
         </div>

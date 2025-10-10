@@ -7,6 +7,7 @@ import Pricing from '../sections/Pricing';
 import FAQs from '../components/FAQ';
 import Reviews from '../sections/Reviews';
 import CallToAction from '../sections/CallToAction';
+import About from '../sections/About';
 
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
       <OurExpertise />
       <OurWork />
       <Pricing />
-      <FAQs />
+      <About/>
       <Reviews/>
       <CallToAction />
     </div>

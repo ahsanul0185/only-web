@@ -50,8 +50,8 @@ const FAQs = () => {
   };
 
   return (
-    <div id="about" className="section-y-padding">
-      <div className="default-padding flex gap-8 flex-col md:flex-row justify-between">
+    <div >
+      <div className="flex gap-8 flex-col md:flex-row justify-between">
         <div className="md:w-[60%]">
           <FAQSection
             faqs={faqs.general}

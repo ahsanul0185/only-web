@@ -27,15 +27,13 @@ export default function PolicyPage() {
             <li>
               {t("Email***E-mail")}:{" "}
               <a
-                href="mailto:onlyweb@onlywebco.com"
+                href="mailto:contact@onlywebco.com "
                 className="text-white underline"
               >
-                onlyweb@onlywebco.com
+                contact@onlywebco.com 
               </a>
             </li>
-            <li>{t("Region***Région")}: </li>
-            <li>{t("Telephone***Téléphone")}: </li>
-            <li>{t("SIREN***SIREN")}: </li>
+            <li>{t("Region***Région")}: France</li>
           </ul>
 
           <h3 className="text-xl font-semibold mt-2">
@@ -44,10 +42,10 @@ export default function PolicyPage() {
           <p className="text-gray-300">
             {t("Only Web Team***Équipe Only Web")} -{" "}
             <a
-              href="mailto:onlyweb@onlywebco.com"
+              href="mailto:contact@onlywebco.com "
               className="text-white underline"
             >
-              onlyweb@onlywebco.com
+              contact@onlywebco.com 
             </a>
           </p>
 
@@ -55,9 +53,7 @@ export default function PolicyPage() {
             {t("Hosting***Hébergement")}
           </h3>
           <p className="text-gray-300">
-            {t("Host***Hébergeur")}: <br />
-            {t("Address***Adresse")}: <br />
-            {t("Phone***Téléphone")}: 09 70 80 89 11
+            {t("Address***Adresse")}: Paris, France<br />
           </p>
         </div>
 
@@ -124,7 +120,7 @@ export default function PolicyPage() {
           </h2>
           <p className="text-gray-300">
             {t(
-              "Any disputes relating to the use of the Only Web website are governed by French law. Exclusive jurisdiction is granted to the competent courts of [Your City], except where prohibited by law.***Tout litige relatif à l'utilisation du site Only Web est régi par le droit français. La compétence exclusive est accordée aux tribunaux compétents de [Votre Ville], sauf interdiction légale."
+              "Any disputes relating to the use of the Only Web website are governed by French law. Exclusive jurisdiction is granted to the competent courts of Paris, except where prohibited by law.***Tout litige relatif à l'utilisation du site Only Web est régi par le droit français. La compétence exclusive est accordée aux tribunaux compétents de Paris, sauf interdiction légale."
             )}
           </p>
         </div>
@@ -136,3 +132,4 @@ export default function PolicyPage() {
     </div>
   );
 }
+
