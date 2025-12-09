@@ -3,6 +3,9 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Button from "../components/Button";
 import { useTranslation } from "../context/useTranslation";
 import Loader from "../components/Loader";
+import imgCloud from "../assets/cloud.jpg"
+import { motion } from "motion/react";
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -54,6 +57,16 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen  text-white">
+
+        <motion.img
+      src={imgCloud}
+      alt=""
+      className="fixed w-full h-full -z-10 select-none object-cover"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
+    />
+
       <div className="default-padding">
         {/* Header */}
         <div className="pb-20 pt-32">
@@ -78,7 +91,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm text-gray-400 mb-2"
+                      className="block text-sm text-gray-200 mb-2"
                     >
                       {t("Name***Nom")}
                     </label>
@@ -88,7 +101,7 @@ export default function ContactPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-transparent border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 bg-dark border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors text-white placeholder-gray-500"
                       placeholder={t("Your name***Votre nom")}
                     />
                   </div>
@@ -96,7 +109,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm text-gray-400 mb-2"
+                      className="block text-sm text-gray-200 mb-2"
                     >
                       {t("Email***E-mail")}
                     </label>
@@ -106,7 +119,7 @@ export default function ContactPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-transparent border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 bg-dark border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors text-white placeholder-gray-500"
                       placeholder={t("your@email.com***votre@email.com")}
                     />
                   </div>
@@ -115,7 +128,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm text-gray-400 mb-2"
+                    className="block text-sm text-gray-200 mb-2"
                   >
                     {t("Subject***Sujet")}
                   </label>
@@ -125,7 +138,7 @@ export default function ContactPage() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-transparent border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors text-white placeholder-gray-600"
+                    className="w-full px-4 py-3 bg-dark border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors text-white placeholder-gray-500"
                     placeholder={t(
                       "How can we help?***Comment pouvons-nous vous aider ?"
                     )}
@@ -135,7 +148,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm text-gray-400 mb-2"
+                    className="block text-sm text-gray-200 mb-2"
                   >
                     {t("Message***Message")}
                   </label>
@@ -145,7 +158,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows="6"
-                    className="w-full px-4 py-3 bg-transparent border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors resize-none text-white placeholder-gray-600"
+                    className="bg-dark w-full px-4 py-3 border border-gray-200/40 rounded-lg focus:outline-none focus:border-white/60 transition-colors resize-none text-white placeholder-gray-500"
                     placeholder={t(
                       "Tell us more about your project...***Parlez-nous davantage de votre projet..."
                     )}
